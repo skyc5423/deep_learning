@@ -1,25 +1,23 @@
-import numpy as np
-import tensorflow as tf
-import matplotlib.pyplot as plt
+from GradientWithTF.gradient_descent import gradient_descent
+from GradientWithTF.gradient_test import gradient_test
+import os
 
-a = tf.constant(1., shape=[100])
-b = tf.constant(- 1., shape=[100])
-c = tf.constant(- 5., shape=[100])
-d = tf.constant(3., shape=[100])
 
-x = tf.constant(np.linspace(-5, 5, 100), dtype=tf.float32)
+def main_gif(dir):
+    import imageio
+    from PIL import Image
 
-with tf.GradientTape() as tape:
-    tape.watch(x)
-    y = tf.multiply(a, x**3) + tf.multiply(b, x**2) + tf.multiply(c, x) + d
+    paths = []
+    for i in range(200):
+        img = Image.open(os.path.join(dir, 'result_%d.png' % i))
+        paths.append(img)
+    imageio.mimsave(os.path.join(dir, 'result.gif'), paths, fps=40)
 
-grads = tape.gradient(y, x)
 
-y_numpy = y.numpy()
-grads_numpy = grads.numpy()
+if __name__ == "__main__":
 
-plt.plot(x.numpy(), y_numpy, color='black')
-plt.plot(x.numpy(), grads_numpy, color='red')
+    # gradient_test()
 
-plt.show()
-
+    DIR = './result1'
+    gradient_descent(True, dir=DIR)
+    main_gif(dir=DIR)
