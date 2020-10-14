@@ -1,0 +1,2 @@
+model_checkpoint_path: "pre_trained_network"
+all_model_checkpoint_paths: "pre_trained_network"
