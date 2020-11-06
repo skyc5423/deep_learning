@@ -1,0 +1,46 @@
+dense/kernel:0
+(171, 16)
+dense/bias:0
+(16,)
+dense_1/kernel:0
+(16, 16)
+dense_1/bias:0
+(16,)
+dense_2/kernel:0
+(16, 8)
+dense_2/bias:0
+(8,)
+dense_3/kernel:0
+(8, 16)
+dense_3/bias:0
+(16,)
+dense_4/kernel:0
+(16, 16)
+dense_4/bias:0
+(16,)
+dense_5/kernel:0
+(16, 171)
+dense_5/bias:0
+(171,)
+dense_6/kernel:0
+(171, 171)
+dense_6/bias:0
+(171,)
+discriminator_1/kernel:0
+(183, 16)
+discriminator_1/bias:0
+(16,)
+discriminator_2/kernel:0
+(16, 16)
+discriminator_2/bias:0
+(16,)
+discriminator_3/kernel:0
+(16, 16)
+discriminator_3/bias:0
+(16,)
+discriminator_4/kernel:0
+(16, 1)
+discriminator_4/bias:0
+(1,)
+Variable:0
+(12, 12)
