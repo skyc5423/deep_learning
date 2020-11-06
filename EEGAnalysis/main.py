@@ -36,7 +36,8 @@ def cluster_train_network(db_helper, pretrain_directory, pre_trained_network_epo
                           save_result_per_epoch=max_epoch, save_directory=cluster_train_directory)
 
 
-def test_network(db_helper, pretrain_directory, cluster_train_directory, cluster_train_epoch, min_dist_list: list, nn_list: list, m: float, random_seed: int = 0, test_name=''):
+def test_network(db_helper, pretrain_directory, cluster_train_directory, cluster_train_epoch, cluster_num: int, min_dist_list: list, nn_list: list, m: float, random_seed: int = 0,
+                 test_name=''):
     output_dir = './%s/%s/test_result_epoch%d_%s' % (pretrain_directory, cluster_train_directory, cluster_train_epoch, test_name)
 
     node_size_list = Util.parse_network(pretrain_directory)
@@ -46,11 +47,12 @@ def test_network(db_helper, pretrain_directory, cluster_train_directory, cluster
     analysis_helper.analysis_umap(min_dist_list=min_dist_list, nn_list=nn_list, random_seed=random_seed,
                                   output_directory=output_dir)
 
-    analysis_helper.fuzzy_cluster(cluster_num=12,
+    analysis_helper.fuzzy_cluster(cluster_num=cluster_num,
                                   m=m,
                                   min_dist=None)
 
-    color_list = ['red', 'orange', 'olive', 'yellow', 'greenyellow', 'lightgreen', 'springgreen', 'lightseagreen', 'dodgerblue', 'navy', 'indigo', 'violet', 'magenta', 'hotpink']
+    color_list = ['red', 'orange', 'olive', 'yellow', 'greenyellow', 'lightgreen', 'springgreen', 'lightseagreen', 'dodgerblue', 'navy', 'indigo', 'violet',
+                  'magenta', 'hotpink', 'maroon', 'plum', 'rosybrown', 'gainsboro', 'sienna', 'powderblue']
 
     analysis_helper.plot_cluster_umap(min_dist_list=min_dist_list, nn_list=nn_list, output_directory=output_dir, color_list=color_list, cluster_array=None)
 
@@ -68,8 +70,8 @@ def main():
 
     # pretrain_network(db_helper=db_helper, output_directory=pretrain_dir, max_epoch=5, k=12)
     # cluster_train_network(db_helper=db_helper, pretrain_directory=pretrain_dir, pre_trained_network_epoch=5, max_epoch=5, cluster_train_directory=cluster_train_dir, m=2)
-    test_network(db_helper=db_helper, pretrain_directory=pretrain_dir, cluster_train_directory=cluster_train_dir, cluster_train_epoch=5000,
-                 min_dist_list=[0.15, 0.3, 0.5, 1.], nn_list=[3, 5, 10, 20, 50], m=1.2, test_name='test_m_1_2')
+    test_network(db_helper=db_helper, pretrain_directory=pretrain_dir, cluster_train_directory=cluster_train_dir, cluster_train_epoch=5000, cluster_num=8,
+                 min_dist_list=[0.15, 0.3, 0.5, 1.], nn_list=[3, 5, 10, 20, 50], m=1.2, test_name='test_m_15_c_6')
 
 
 if __name__ == '__main__':

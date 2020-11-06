@@ -118,6 +118,29 @@ class AnalysisHelper(object):
         fig.savefig('%s/umap_scatter_with_cluster_random_seed_%d.png' % (output_directory, self.random_seed))
         plt.close(fig)
 
+        d = 1 / self.distance
+        d = (d - np.min(d)) / (np.max(d) - np.min(d))
+
+        fig_total, ax_total = plt.subplots(len(min_dist_list), len(nn_list), figsize=(len(nn_list) * 4, len(min_dist_list) * 4))
+        for cluster_idx in range(cluster_num):
+            fig, ax = plt.subplots(len(min_dist_list), len(nn_list), figsize=(len(nn_list) * 4, len(min_dist_list) * 4))
+            for i in range(len(min_dist_list)):
+                for j in range(len(nn_list)):
+                    ax[i, j].scatter(self.umap_feature_list[i][j][:, 0],
+                                     self.umap_feature_list[i][j][:, 1], alpha=0.3, color=color_list[cluster_idx],
+                                     s=np.where(d[cluster_idx] > np.mean(d) + np.std(d), d[cluster_idx], 0) * 50)
+                    ax_total[i, j].scatter(self.umap_feature_list[i][j][:, 0],
+                                           self.umap_feature_list[i][j][:, 1], alpha=0.1, color=color_list[cluster_idx],
+                                           s=np.where(d[cluster_idx] > np.mean(d) + np.std(d), d[cluster_idx], 0) * 50)
+                    ax[i, j].scatter(self.umap_feature_list[i][j][np.argmax(d[cluster_idx]), 0],
+                                     self.umap_feature_list[i][j][np.argmax(d[cluster_idx]), 1], marker='*', color=color_list[cluster_idx], edgecolors='black', linewidths=0.5)
+                    ax_total[i, j].scatter(self.umap_feature_list[i][j][np.argmax(d[cluster_idx]), 0],
+                                           self.umap_feature_list[i][j][np.argmax(d[cluster_idx]), 1], marker='*', color=color_list[cluster_idx], edgecolors='black', linewidths=0.5)
+            fig.savefig('%s/umap_scatter_with_cluster_%d.png' % (output_directory, cluster_idx))
+            plt.close(fig)
+        fig_total.savefig('%s/umap_scatter_with_cluster.png' % (output_directory))
+        plt.close(fig_total)
+
     def fuzzy_cluster(self, cluster_num: int, m: float, min_dist=None):
         encoded_feature_array = self.network.compute_cluster_y(self.db_helper.norm_total_data).numpy()
         cntr, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(encoded_feature_array.T, cluster_num, m=m, error=0.005, maxiter=1000, init=None)
@@ -143,13 +166,29 @@ class AnalysisHelper(object):
         cluster_num = np.max(cluster_array) + 1
 
         x, y, yerr = [], [], []
+        y_child, yerr_child = [], []
+        y_adhd, yerr_adhd = [], []
         for cluster_idx in range(cluster_num):
             x.append(cluster_idx)
             y.append(np.mean(self.db_helper.norm_total_data[np.where(cluster_array == cluster_idx)[0]], axis=0))
             yerr.append(np.std(self.db_helper.norm_total_data[np.where(cluster_array == cluster_idx)[0]], axis=0))
+            y_child.append(np.mean(self.db_helper.norm_total_data[np.where(cluster_array[:self.db_helper.adhd_start_idx] == cluster_idx)[0]], axis=0))
+            yerr_child.append(np.std(self.db_helper.norm_total_data[np.where(cluster_array[:self.db_helper.adhd_start_idx] == cluster_idx)[0]], axis=0))
+            y_adhd.append(
+                np.mean(self.db_helper.norm_total_data[np.where(cluster_array[self.db_helper.adhd_start_idx:] == cluster_idx)[0] + self.db_helper.adhd_start_idx], axis=0))
+            yerr_adhd.append(
+                np.std(self.db_helper.norm_total_data[np.where(cluster_array[self.db_helper.adhd_start_idx:] == cluster_idx)[0] + self.db_helper.adhd_start_idx], axis=0))
         for i in range(self.db_helper.norm_total_data.shape[1]):
-            fig, ax = plt.subplots(1, 1, figsize=(12, 4))
-            ax.bar(x, np.array(y)[:, i], yerr=np.array(yerr)[:, i], color=color_list[:cluster_num])
+            fig, ax = plt.subplots(3, 1, figsize=(12, 12))
+            ax[0].bar(x, np.array(y)[:, i], yerr=np.array(yerr)[:, i], color=color_list[:cluster_num])
+            ax[1].bar(x, np.array(y_child)[:, i], yerr=np.array(yerr_child)[:, i], color=color_list[:cluster_num])
+            ax[2].bar(x, np.array(y_adhd)[:, i], yerr=np.array(yerr_adhd)[:, i], color=color_list[:cluster_num])
+            for ax_i in range(3):
+                ax[ax_i].plot(np.linspace(-1, cluster_num, 100), np.zeros(100), 'k--', linewidth=0.5)
+                ax[ax_i].plot(np.linspace(-1, cluster_num, 100), np.ones(100) * 0.5, 'r--', linewidth=0.5)
+                ax[ax_i].plot(np.linspace(-1, cluster_num, 100), -np.ones(100) * 0.5, 'b--', linewidth=0.5)
+                ax[ax_i].plot(np.linspace(-1, cluster_num, 100), np.ones(100) * 0.25, 'g--', linewidth=0.5)
+                ax[ax_i].plot(np.linspace(-1, cluster_num, 100), -np.ones(100) * 0.25, 'g--', linewidth=0.5)
             fig.savefig('%s/hist_feature_%s.png' % (output_directory, self.db_helper.feature_name_list[i]))
             plt.close(fig)
 
