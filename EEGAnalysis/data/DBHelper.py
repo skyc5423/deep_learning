@@ -254,3 +254,4 @@ class DBHelper(object):
             self.adhd_data = self.adhd_data[:, 19 * 6:]
             self.hbn_data = self.hbn_data[:, 19 * 6:]
             self.norm_total_data = self.norm_total_data[:, 19 * 6:]
+            self.feature_name_list = self.feature_name_list[19 * 6:]
