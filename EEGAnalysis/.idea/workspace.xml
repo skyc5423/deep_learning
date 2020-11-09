@@ -2,389 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0da6aafb-a1f2-4bdd-b3ff-b66adb690e59" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/feature_extract/FeatureExtractor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/preprocess/50/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/preprocess/50/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/preprocess/50/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/preprocess/50/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/preprocess/DataLoader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/preprocess/Preprocessor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/AutoEncoder/Network.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DeepLearningStudy/AutoEncoder/Network.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/AutoEncoder/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DeepLearningStudy/AutoEncoder/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/Network.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/Network.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/db_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/db_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/checkpoint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/network_info.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_Age_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_Auditory_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_CDI_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_CONNERS 2_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_CONNERS1_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_DZ_G_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_Dominant Hand_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_Hyperactivity_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_IQ_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_Inattention_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_PBI_F-care_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_PBI_F-overprotection_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_PBI_F_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_PBI_M-care_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_PBI_M-overprotection_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_PBI_M_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_SAIC_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_Sex_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_T-Score_commission errors.1_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_T-Score_commission errors_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_T-Score_mean of reaction&#10;time.1_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_T-Score_mean of reaction&#10;time_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_T-Score_omission errors.1_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_T-Score_omission errors_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_T-Score_standard deviation of reaction time.1_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_T-Score_standard deviation of reaction time_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_TAIC_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_Visual_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Alpha_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Beta_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Delta_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Gamma_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_High Beta_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_abs_power_Theta_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_DAR_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TAR_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rat_power_TBR_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Alpha_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Beta_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Delta_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Gamma_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_High Beta_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_central_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_frontal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_left_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_occipital_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_parietal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_right_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/bar_rel_power_Theta_temporal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/color_test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/reg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Alpha_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Alpha_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Alpha_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Alpha_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Alpha_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Alpha_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Alpha_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Beta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Beta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Beta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Beta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Beta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Beta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Beta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Delta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Delta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Delta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Delta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Delta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Delta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Delta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Gamma_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Gamma_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Gamma_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Gamma_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Gamma_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Gamma_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Gamma_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_High Beta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_High Beta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_High Beta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_High Beta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_High Beta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_High Beta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_High Beta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Theta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Theta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Theta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Theta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Theta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Theta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_abs_power_Theta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_DAR_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_DAR_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_DAR_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_DAR_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_DAR_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_DAR_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_DAR_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TAR_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TAR_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TAR_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TAR_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TAR_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TAR_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TAR_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TBR_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TBR_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TBR_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TBR_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TBR_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TBR_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rat_power_TBR_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Alpha_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Alpha_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Alpha_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Alpha_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Alpha_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Alpha_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Alpha_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Beta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Beta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Beta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Beta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Beta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Beta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Beta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Delta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Delta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Delta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Delta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Delta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Delta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Delta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Gamma_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Gamma_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Gamma_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Gamma_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Gamma_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Gamma_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Gamma_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_High Beta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_High Beta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_High Beta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_High Beta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_High Beta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_High Beta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_High Beta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Theta_central.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Theta_frontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Theta_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Theta_occipital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Theta_parietal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Theta_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/regression_feature_rel_power_Theta_temporal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/result.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/result_2.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/scatter_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/scatter_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/tmp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/tmp2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/tmp_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_0_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_0_dep.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_0_others.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_0_tic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_1_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_1_dep.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_1_others.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_1_tic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_2_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_2_dep.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_2_others.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/result_test/umap_visual_compare_9999_2_tic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/trained_network_5000.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/gathered_feature_with_channel_8/trained_network_5000.index" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/med_std_array.npy" beforeDir="false" afterPath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/med_std_array.npy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/pow_feature.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/pre_trained_network.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/pre_trained_network.data-00000-of-00001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/pre_trained_network.index" beforeDir="false" afterPath="$PROJECT_DIR$/../DeepLearningStudy/DeepClusterEEG/pre_trained_network.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DeepLearningStudy/TwoClassClassification/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DeepLearningStudy/TwoClassClassification/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/EEGAnalysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EEGAnalysis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/DBHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/DBHelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/AnalysisHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/AnalysisHelper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -393,15 +34,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/EEGAnalysis$main.coverage" NAME="main Coverage Results" MODIFIED="1604632990037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EEGAnalysis$main.coverage" NAME="main Coverage Results" MODIFIED="1604888662120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EEGAnalysis$main_data.coverage" NAME="main_data Coverage Results" MODIFIED="1604908467292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/preprocess" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analysis/AnalysisHelper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2205">
-              <caret line="147" column="57" selection-start-line="147" selection-start-column="57" selection-end-line="147" selection-end-column="57" />
+            <state relative-caret-position="4335">
+              <caret line="289" column="44" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -412,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/DBHelper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
+            <state relative-caret-position="3571">
               <caret line="241" column="39" selection-start-line="241" selection-start-column="39" selection-end-line="241" selection-end-column="39" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -421,10 +63,26 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/feature_extract/FeatureExtractor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#505#1788#0" />
+                <element signature="e#301#2134#0" />
+                <element signature="e#2304#2734#0" />
+                <element signature="e#4294#6418#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deep_neural_net/Network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2836">
+            <state relative-caret-position="435">
               <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -433,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="235">
+              <caret line="70" column="34" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -446,10 +104,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/preprocess/Preprocessor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/preprocess/DataLoader.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="47" selection-start-column="47" selection-end-column="47" />
+            <state relative-caret-position="272">
+              <caret line="47" column="37" lean-forward="true" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -457,7 +151,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deep_neural_net/Trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
+            <state relative-caret-position="675">
               <caret line="49" column="85" selection-start-line="49" selection-start-column="85" selection-end-line="49" selection-end-column="85" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
@@ -490,17 +184,25 @@
         <option value="$PROJECT_DIR$/DeepClusterNetwork/Network.py" />
         <option value="$PROJECT_DIR$/deep_neural_net/Network.py" />
         <option value="$PROJECT_DIR$/deep_neural_net/Trainer.py" />
-        <option value="$PROJECT_DIR$/analysis/AnalysisHelper.py" />
-        <option value="$PROJECT_DIR$/util.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/data/DBHelper.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/analysis/AnalysisHelper.py" />
+        <option value="$PROJECT_DIR$/data/Preprocessor.py" />
+        <option value="$PROJECT_DIR$/data/main_data.py" />
+        <option value="$PROJECT_DIR$/data/RawDataLoader.py" />
+        <option value="$PROJECT_DIR$/data/preprocess/RawDataLoader.py" />
+        <option value="$PROJECT_DIR$/data/preprocess/main_data.py" />
+        <option value="$PROJECT_DIR$/data/preprocess/DataLoader.py" />
+        <option value="$PROJECT_DIR$/data/preprocess/Preprocessor.py" />
+        <option value="$PROJECT_DIR$/util.py" />
+        <option value="$PROJECT_DIR$/data/feature_extract/FeatureExtractor.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="966" />
+    <option name="height" value="965" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -508,6 +210,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -528,13 +231,23 @@
             <path>
               <item name="EEGAnalysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="EEGAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocess" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EEGAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EEGAnalysis" type="462c0819:PsiDirectoryNode" />
               <item name="deep_neural_net" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EEGAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EEGAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="pretrain_k8" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -545,7 +258,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/data/preprocess" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/preprocess" />
       <recent name="$PROJECT_DIR$/data/ref_file" />
       <recent name="$PROJECT_DIR$/DeepClusterNetwork" />
     </key>
@@ -562,7 +280,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main_data">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="EEGAnalysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -585,8 +303,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="EEGAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/preprocess" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main_data" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -602,24 +343,26 @@
       <option name="presentableId" value="Default" />
       <updated>1604558973362</updated>
       <workItem from="1604558974718" duration="10488000" />
-      <workItem from="1604573814425" duration="8712000" />
+      <workItem from="1604573814425" duration="28736000" />
+      <workItem from="1604841489434" duration="13869000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19200000" />
+    <option name="totallyTimeSpent" value="53093000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="966" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="965" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15995117" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16178267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="File Transfer" weight="0.3298969" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32951945" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32951945" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.54347825" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32875144" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48224512" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40206185" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -639,6 +382,37 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/analysis/AnalysisHelper.py</url>
+          <line>213</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/analysis/AnalysisHelper.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/analysis/AnalysisHelper.py</url>
+          <line>273</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/analysis/__init__.py" />
@@ -661,7 +435,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deep_neural_net/Network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2836">
+        <state relative-caret-position="435">
           <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -671,7 +445,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deep_neural_net/Trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="675">
           <caret line="49" column="85" selection-start-line="49" selection-start-column="85" selection-end-line="49" selection-end-column="85" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
@@ -679,17 +453,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/Preprocessor.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="70" column="34" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.3/remote_sources/-1370957209/674678188/mne/io/meas_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="1772" selection-start-line="1772" selection-end-line="1772" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/preprocess/DataLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/preprocess/Preprocessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="47" selection-start-column="47" selection-end-column="47" />
+        <state relative-caret-position="272">
+          <caret line="47" column="37" lean-forward="true" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analysis/AnalysisHelper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2205">
-          <caret line="147" column="57" selection-start-line="147" selection-start-column="57" selection-end-line="147" selection-end-column="57" />
+        <state relative-caret-position="4335">
+          <caret line="289" column="44" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -698,7 +522,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/DBHelper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
+        <state relative-caret-position="3571">
           <caret line="241" column="39" selection-start-line="241" selection-start-column="39" selection-end-line="241" selection-end-column="39" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -706,12 +530,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/data/feature_extract/FeatureExtractor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="270">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#505#1788#0" />
+            <element signature="e#301#2134#0" />
+            <element signature="e#2304#2734#0" />
+            <element signature="e#4294#6418#0" />
           </folding>
         </state>
       </provider>

@@ -54,9 +54,11 @@ def test_network(db_helper, pretrain_directory, cluster_train_directory, cluster
     color_list = ['red', 'orange', 'olive', 'yellow', 'greenyellow', 'lightgreen', 'springgreen', 'lightseagreen', 'dodgerblue', 'navy', 'indigo', 'violet',
                   'magenta', 'hotpink', 'maroon', 'plum', 'rosybrown', 'gainsboro', 'sienna', 'powderblue']
 
-    analysis_helper.plot_cluster_umap(min_dist_list=min_dist_list, nn_list=nn_list, output_directory=output_dir, color_list=color_list, cluster_array=None)
+    # analysis_helper.plot_cluster_umap(min_dist_list=min_dist_list, nn_list=nn_list, output_directory=output_dir, color_list=color_list, cluster_array=None)
+    analysis_helper.plot_cluster_umap_distance(min_dist_list=min_dist_list, nn_list=nn_list, output_directory=output_dir, color_list=color_list, cluster_array=None)
 
-    analysis_helper.plot_bar_graph(output_dir, color_list=color_list, cluster_array=None)
+    # analysis_helper.plot_bar_graph(output_dir, color_list=color_list, cluster_array=None)
+    analysis_helper.plot_bar_graph_distance(output_dir, color_list=color_list, cluster_array=None)
 
 
 def main():
@@ -70,8 +72,8 @@ def main():
 
     # pretrain_network(db_helper=db_helper, output_directory=pretrain_dir, max_epoch=5, k=12)
     # cluster_train_network(db_helper=db_helper, pretrain_directory=pretrain_dir, pre_trained_network_epoch=5, max_epoch=5, cluster_train_directory=cluster_train_dir, m=2)
-    test_network(db_helper=db_helper, pretrain_directory=pretrain_dir, cluster_train_directory=cluster_train_dir, cluster_train_epoch=5000, cluster_num=8,
-                 min_dist_list=[0.15, 0.3, 0.5, 1.], nn_list=[3, 5, 10, 20, 50], m=1.2, test_name='test_m_15_c_6')
+    test_network(db_helper=db_helper, pretrain_directory=pretrain_dir, cluster_train_directory=cluster_train_dir, cluster_train_epoch=20000, cluster_num=13,
+                 min_dist_list=[0.1, 0.15, 0.3, 0.5, 1.], nn_list=[10, 20, 50], m=1.23, test_name='test_m_123_c_13')
 
 
 if __name__ == '__main__':
