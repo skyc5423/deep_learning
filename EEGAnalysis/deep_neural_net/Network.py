@@ -6,7 +6,7 @@ import skfuzzy as fuzz
 
 
 class AutoEncoder(tf.keras.Model):
-    def __init__(self, name, feature_num, m, beta, delta, gamma, noise_std, pretrain_dir, k=None, node_size_list=None):
+    def __init__(self, name, feature_num, m, beta, delta, gamma, noise_std, pretrain_dir, load_weight_path=None, k=None, node_size_list=None):
         super().__init__(name=name)
         if node_size_list is None:
             node_size_list = [48, 24, k, 24, 48, 48, 24, 12]
@@ -21,6 +21,7 @@ class AutoEncoder(tf.keras.Model):
         self.gamma = gamma
         self.noise_std = noise_std
         self.pretrain_dir = pretrain_dir
+        self.load_weight_path = load_weight_path
 
         self.encoder_1 = Dense(node_size_list[0], 'elu')
         self.encoder_2 = Dense(node_size_list[1], 'elu')
@@ -42,6 +43,9 @@ class AutoEncoder(tf.keras.Model):
         self.optimizer = tf.keras.optimizers.Adam(
             learning_rate=0.0002, epsilon=1e-07, amsgrad=False,
         )
+
+    def load_network_weight(self):
+        self.load_weights('./%s' % self.load_weight_path)
 
     def __call__(self, input_batch, training=True):
         encode_f_batch = self.encode(input_batch)
@@ -117,6 +121,7 @@ class AutoEncoder(tf.keras.Model):
 
     def loss_decoder(self, input_image, decode_img_noise, decode_img_real):
         return 5 * tf.reduce_mean(tf.pow(tf.abs(decode_img_noise - decode_img_real), 1)) + self.delta * tf.reduce_mean(tf.pow(tf.abs(input_image - decode_img_real), 1))
+        # return 5 * tf.reduce_mean(tf.sqrt(tf.abs(decode_img_noise - decode_img_real))) + self.delta * tf.reduce_mean(tf.sqrt(tf.abs(input_image - decode_img_real)))
 
     def affinity_mat(self, encode_f_real):
         zi = tf.tile(tf.expand_dims(encode_f_real, axis=0), [encode_f_real.shape[0], 1, 1])
@@ -154,7 +159,8 @@ class AutoEncoder(tf.keras.Model):
         cholesky_l = self.compute_cholesky_if_possible(cluster_y_tilde)
 
         cluster_y = tf.matmul(cluster_y_tilde, tf.transpose(tf.linalg.inv(cholesky_l))) * np.sqrt(encode_f_real.shape[0])
-        return cluster_y
+        # return cluster_y
+        return encode_f_real
 
     def get_membership_grade(self, input_feature):
         cluster_num = self.k
@@ -187,16 +193,6 @@ class AutoEncoder(tf.keras.Model):
         self.v_array = cntr
         self.u = u
         self.d = d
-
-        # # cluster_num = self.k
-        # # for i in range(cluster_num):
-        # #     self.v_array[i].assign(input_feature[tf.argmin(tf.reduce_mean(tf.square(self.v_array[i] - input_feature[:, :]), axis=1))])
-        # self.v_array = tf.Variable(tf.random.uniform([self.k, self.k], -1, 1))
-        # while True:
-        #     flag = self.get_membership_grade(input_feature)
-        #     if flag:
-        #         break
-        #     self.get_cluster_prototype(input_feature)
 
     def train_autoencoder(self, input_image, cluster=False, epoch_idx=None):
 
@@ -231,6 +227,8 @@ class AutoEncoder(tf.keras.Model):
                     plt.close(fig)
                 loss_encoder = self.loss_encoder_cluster(input_image, encode_f_real, encode_f_fake, cluster_y)
                 loss_cluster = self.loss_cluster(affinity_mat, cluster_y)
+                if not np.min(loss_cluster == loss_cluster):
+                    print()
             else:
                 loss_cluster = 0
                 loss_encoder = self.loss_encoder_autoencoder(input_image, encode_f_real, encode_f_fake)

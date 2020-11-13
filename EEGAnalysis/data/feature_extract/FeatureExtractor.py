@@ -2,7 +2,10 @@ import numpy as np
 from scipy.signal import welch
 from scipy import fftpack
 import math
+import os
+import json
 from scipy.signal import hilbert
+from data.preprocess.DataLoader import DataLoader
 
 
 class FeatureExtractor(object):
@@ -307,3 +310,65 @@ class FeatureExtractor(object):
                         coupling[n, m] = (np.log(mi_bin_size) - MI) / np.log(mi_bin_size)
                 cp[ch1, ch2] = np.mean(coupling)
         self.cp = cp
+
+    def make_jsonable_data(self, data):
+        if isinstance(data, dict):
+            for key in data.keys():
+                tmp_data = data[key]
+                data[key] = self.make_jsonable_data(tmp_data)
+            return data
+        elif isinstance(data, np.ndarray):
+            return data.tolist()
+        else:
+            return data
+
+    def make_json_from_data(self):
+        json_data = {}
+        if self.abs_power is not None:
+            json_data['abs_power'] = self.make_jsonable_data(self.abs_power)
+        if self.rel_power is not None:
+            json_data['rel_power'] = self.make_jsonable_data(self.rel_power)
+        if self.rat_power is not None:
+            json_data['rat_power'] = self.make_jsonable_data(self.rat_power)
+        if self.sef95 is not None:
+            json_data['sef95'] = self.make_jsonable_data(self.sef95)
+        if self.coherence is not None:
+            json_data['coherence'] = self.make_jsonable_data(self.coherence)
+        if self.samp_en is not None:
+            json_data['samp_en'] = self.make_jsonable_data(self.samp_en)
+        if self.cp is not None:
+            json_data['cp'] = self.make_jsonable_data(self.cp)
+
+        json_data = json.dumps(json_data)
+        return json_data
+
+    def save_feature_at(self, output_path, file_name):
+
+        json_data = self.make_json_from_data()
+        print(os.path.join(output_path, '%s.json' % file_name))
+        f = open(os.path.join(output_path, '%s.json' % file_name), 'w')
+        f.write(json_data)
+        f.close()
+
+    def analysis_data(self, data_loader: DataLoader, analysis_power, analysis_coherence, analysis_sef95, analysis_samp_entropy, analysis_coupling_analysis, output_path):
+        if not os.path.exists(output_path):
+            os.mkdir(output_path)
+        for crt_data in data_loader.total_data_list:
+            try:
+                crt_raw = data_loader.read_edf_file(crt_data)
+                crt_file_name = crt_data.split('/')[-1].split('.')[0]
+                self.set_raw(crt_raw)
+                if analysis_power:
+                    self.analysis_power()
+                if analysis_coherence:
+                    self.analysis_coherence()
+                if analysis_sef95:
+                    self.analysis_sef95()
+                if analysis_samp_entropy:
+                    self.analysis_samp_entropy()
+                if analysis_coupling_analysis:
+                    self.analysis_coupling_analysis()
+
+                self.save_feature_at(output_path, crt_file_name)
+            except:
+                continue

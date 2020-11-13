@@ -7,10 +7,11 @@ from data.preprocess.Preprocessor import Preprocessor
 
 
 class DataLoader(object):
-    def __init__(self):
+    def __init__(self, for_preprocess=False):
         self.total_data_list = []
         self.yb_ch_list = ['Fp1', 'F7', 'T3', 'T5', 'T6', 'T4', 'F8', 'Fp2', 'F4', 'C4', 'P4', 'O2', 'Pz', 'Fz', 'Cz', 'O1', 'P3', 'C3', 'F3']
-        self.preprocessor = Preprocessor()
+        if for_preprocess:
+            self.preprocessor = Preprocessor()
 
     def add_data_list_at(self, list_path, suffix='.edf'):
         for file_name in os.listdir(list_path):
@@ -44,10 +45,14 @@ class DataLoader(object):
         raw = mne.io.RawArray(np.array(ch_matched_data) * 1E6, info)
         return raw
 
-    @staticmethod
-    def read_edf_file(edf_file_path):
-        edf_file = pyedflib.EdfReader(edf_file_path)
-        return edf_file
+    def read_edf_file(self, edf_file_path):
+        raw = mne.io.read_raw_edf(edf_file_path)
+        # if raw.get_data().shape[0] != 19:
+        #     try:
+        #         raw = self.match_channel_cnt(raw)
+        #     except:
+        #         return None
+        return raw
 
     def read_cnt_file(self, cnt_file_path):
         raw = mne.io.read_raw_cnt(cnt_file_path)
@@ -65,7 +70,7 @@ class DataLoader(object):
             if crt_data.endswith('.cnt'):
                 raw = self.read_cnt_file(crt_data)
             else:
-                raw = None
+                raw = self.read_edf_file(crt_data)
 
             if raw is None:
                 continue

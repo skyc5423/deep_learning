@@ -45,10 +45,12 @@ class AnalysisHelper(object):
             tmp_learned_umap_list = []
             for nn in nn_list:
                 if min_dist > 1.:
-                    learned_umap = umap.UMAP(n_neighbors=nn, random_state=random_seed, spread=min_dist, min_dist=min_dist, negative_sample_rate=10, target_n_neighbors=10)
+                    learned_umap = umap.UMAP(n_neighbors=nn, random_state=random_seed, spread=min_dist, min_dist=min_dist, negative_sample_rate=10, target_n_neighbors=10,
+                                             n_epochs=2000)
                     umap_feature = learned_umap.fit_transform(encoded_feature_array)
                 else:
-                    learned_umap = umap.UMAP(n_neighbors=nn, random_state=random_seed, min_dist=min_dist, negative_sample_rate=10, target_n_neighbors=10)
+                    learned_umap = umap.UMAP(n_neighbors=nn, random_state=random_seed, min_dist=min_dist, negative_sample_rate=10, target_n_neighbors=10,
+                                             n_epochs=2000)
                     umap_feature = learned_umap.fit_transform(encoded_feature_array)
 
                 tmp_umap_feature_list.append(umap_feature)
@@ -69,7 +71,14 @@ class AnalysisHelper(object):
             if len(min_dist_list) > 1 and len(nn_list) > 1:
                 for i in range(len(min_dist_list)):
                     for j in range(len(nn_list)):
-                        ax[i, j].scatter(umap_feature_list[i][j][:, 0], umap_feature_list[i][j][:, 1], alpha=0.2)
+                        ax[i, j].scatter(umap_feature_list[i][j][:self.db_helper.adhd_start_idx, 0],
+                                         umap_feature_list[i][j][:self.db_helper.adhd_start_idx, 1], alpha=0.1,
+                                         color='black')
+                        ax[i, j].scatter(umap_feature_list[i][j][self.db_helper.adhd_start_idx:self.db_helper.mipdb_start_idx, 0],
+                                         umap_feature_list[i][j][self.db_helper.adhd_start_idx:self.db_helper.mipdb_start_idx, 1], alpha=0.3, color='red')
+                        ax[i, j].scatter(umap_feature_list[i][j][self.db_helper.mipdb_start_idx:, 0],
+                                         umap_feature_list[i][j][self.db_helper.mipdb_start_idx:, 1], alpha=0.3,
+                                         color='blue')
             elif len(min_dist_list) > 1:
                 for i in range(len(min_dist_list)):
                     ax[i].scatter(umap_feature_list[i][0][:, 0], umap_feature_list[i][0][:, 1], alpha=0.2)
@@ -80,6 +89,62 @@ class AnalysisHelper(object):
                 ax.scatter(umap_feature_list[0][0][:, 0], umap_feature_list[0][0][:, 1], alpha=0.2)
             fig.savefig('%s/umap_scatter_random_seed_%d.png' % (output_directory, random_seed))
             plt.close(fig)
+
+    def random_seed_umap(self, min_dist: float, nn: int, random_seed_list: list, output_directory=None, color_list=None, distance_std=1., cluster_array=None):
+        if self.network is None:
+            print("Analysis Helper has no network.")
+            return
+
+        # if self.umap_list is not None:
+        #     print("UMAP list already exists. old UMAP list will be replaced with new one")
+        # if self.umap_feature_list is not None:
+        #     print("UMAP feature list already exists. old UMAP feature list will be replaced with new one")
+
+        if cluster_array is None:
+            cluster_array = self.cluster_array
+        if self.used_color_list is None:
+            used_color_list = self.named_color_list
+        else:
+            used_color_list = self.used_color_list
+        if color_list is None:
+            color_list = used_color_list
+
+        cluster_num = np.max(cluster_array) + 1
+        d = 1 / self.distance
+        d = (d - np.min(d)) / (np.max(d) - np.min(d))
+
+        ax_num = 3
+        fig, ax = plt.subplots(ax_num, ax_num, figsize=(12, 12))
+        fig_cluster, ax_cluster = plt.subplots(ax_num, ax_num, figsize=(12, 12))
+        encoded_feature_array = self.network.compute_cluster_y(self.db_helper.norm_total_data).numpy()
+        for random_seed_idx in range(len(random_seed_list)):
+            random_seed = random_seed_list[random_seed_idx]
+            learned_umap = umap.UMAP(n_neighbors=nn, random_state=random_seed, spread=min_dist, min_dist=min_dist, negative_sample_rate=10, target_n_neighbors=10, n_epochs=2000)
+            umap_feature = learned_umap.fit_transform(encoded_feature_array)
+            ax[int(random_seed_idx / ax_num), random_seed_idx % ax_num].scatter(umap_feature[:self.db_helper.adhd_start_idx, 0],
+                                                                                umap_feature[:self.db_helper.adhd_start_idx, 1], alpha=0.1,
+                                                                                color='black', s=15)
+            ax[int(random_seed_idx / ax_num), random_seed_idx % ax_num].scatter(umap_feature[self.db_helper.adhd_start_idx:self.db_helper.mipdb_start_idx, 0],
+                                                                                umap_feature[self.db_helper.adhd_start_idx:self.db_helper.mipdb_start_idx, 1], alpha=0.3,
+                                                                                color='red', s=15)
+            ax[int(random_seed_idx / ax_num), random_seed_idx % ax_num].scatter(umap_feature[self.db_helper.mipdb_start_idx:, 0],
+                                                                                umap_feature[self.db_helper.mipdb_start_idx:, 1], alpha=0.3,
+                                                                                color='blue', s=15)
+            for cluster_idx in range(cluster_num):
+                ax_cluster[int(random_seed_idx / ax_num), random_seed_idx % ax_num].scatter(umap_feature[:, 0],
+                                                                                            umap_feature[:, 1], alpha=0.2, color=color_list[cluster_idx],
+                                                                                            s=np.where(d[cluster_idx] > np.mean(d) + distance_std * np.std(d), d[cluster_idx],
+                                                                                                       0) * 80)
+                ax_cluster[int(random_seed_idx / ax_num), random_seed_idx % ax_num].scatter(umap_feature[np.argmax(d[cluster_idx]), 0],
+                                                                                            umap_feature[np.argmax(d[cluster_idx]), 1], marker='*', color=color_list[cluster_idx],
+                                                                                            edgecolors='black',
+                                                                                            linewidths=0.5)
+
+        fig.savefig('%s/umap_scatter_random_seed_list.png' % (output_directory))
+        plt.close(fig)
+
+        fig_cluster.savefig('%s/umap_scatter_random_seed_list_cluster.png' % (output_directory))
+        plt.close(fig_cluster)
 
     def plot_cluster_umap(self, min_dist_list: list, nn_list: list, output_directory: str, color_list: list, cluster_array=None):
         if not os.path.exists('%s' % output_directory):
@@ -98,11 +163,16 @@ class AnalysisHelper(object):
 
         cluster_num = np.max(cluster_array) + 1
 
+        d = 1 / self.distance
+        d = (d - np.min(d)) / (np.max(d) - np.min(d))
+
         fig, ax = plt.subplots(len(min_dist_list), len(nn_list), figsize=(len(nn_list) * 4, len(min_dist_list) * 4))
         if len(min_dist_list) > 1 and len(nn_list) > 1:
             for i in range(len(min_dist_list)):
                 for j in range(len(nn_list)):
                     for cluster_idx in range(cluster_num):
+                        ax[i, j].scatter(self.umap_feature_list[i][j][np.argmax(d[cluster_idx]), 0],
+                                         self.umap_feature_list[i][j][np.argmax(d[cluster_idx]), 1], marker='*', color=color_list[cluster_idx], edgecolors='black', linewidths=0.5)
                         ax[i, j].scatter(self.umap_feature_list[i][j][np.where(cluster_array == cluster_idx), 0],
                                          self.umap_feature_list[i][j][np.where(cluster_array == cluster_idx), 1], alpha=0.2, color=color_list[cluster_idx])
         elif len(min_dist_list) > 1:
@@ -117,11 +187,10 @@ class AnalysisHelper(object):
                                   self.umap_feature_list[0][j][np.where(cluster_array == cluster_idx), 1], alpha=0.2, color=color_list[cluster_idx])
         else:
             ax.scatter(self.umap_feature_list[0][0][:, 0], self.umap_feature_list[0][0][:, 1], alpha=0.2)
-        fig.savefig('%s/result_max/umap_scatter_with_cluster_random_seed_%d.png' % (output_directory, self.random_seed))
+        fig.savefig('%s/result_max/umap_scatter_with_cluster_%d.png' % (output_directory, self.random_seed))
         plt.close(fig)
 
-    def plot_cluster_umap_distance(self, min_dist_list: list, nn_list: list, output_directory: str, color_list: list, cluster_array=None, distance_std: float = 0.5):
-
+    def plot_cluster_umap_distance(self, min_dist_list: list, nn_list: list, output_directory: str, color_list: list, cluster_array=None, distance_std: float = 1.):
         if not os.path.exists('%s/result_distance' % output_directory):
             os.mkdir('%s/result_distance' % output_directory)
 
@@ -162,7 +231,7 @@ class AnalysisHelper(object):
 
     def fuzzy_cluster(self, cluster_num: int, m: float, min_dist=None):
         encoded_feature_array = self.network.compute_cluster_y(self.db_helper.norm_total_data).numpy()
-        cntr, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(encoded_feature_array.T, cluster_num, m=m, error=0.005, maxiter=1000, init=None)
+        cntr, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(encoded_feature_array.T, cluster_num, m=m, error=0.005, maxiter=10000, init=None, seed=0)
         self.distance = d
         self.cntr = cntr
         self.u = u
@@ -172,7 +241,6 @@ class AnalysisHelper(object):
         #     self.cluster_array = np.
 
     def plot_bar_graph(self, output_directory: str, color_list: list, cluster_array=None):
-
         if cluster_array is None:
             cluster_array = self.cluster_array
         if self.used_color_list is None:
@@ -188,6 +256,26 @@ class AnalysisHelper(object):
         y_child, yerr_child = [], []
         y_adhd, yerr_adhd = [], []
         for cluster_idx in range(cluster_num):
+            # x.append(cluster_idx)
+            # y.append(np.mean(self.db_helper.norm_total_data[np.where(cluster_array == cluster_idx)[0]], axis=0))
+            # yerr.append(np.std(self.db_helper.norm_total_data[np.where(cluster_array == cluster_idx)[0]], axis=0))
+            # y_child.append(np.mean(self.db_helper.norm_total_data[np.where(d[cluster_idx, :self.db_helper.adhd_start_idx] > np.mean(d) + distance_std * np.std(d))[0]], axis=0))
+            # yerr_child.append(np.std(self.db_helper.norm_total_data[np.where(d[cluster_idx, :self.db_helper.adhd_start_idx] > np.mean(d) + distance_std * np.std(d))[0]], axis=0))
+            # y_adhd_db.append(
+            #     np.mean(self.db_helper.norm_total_data[
+            #                 np.where(d[cluster_idx, self.db_helper.adhd_start_idx:] > np.mean(d) + distance_std * np.std(d))[0] + self.db_helper.adhd_start_idx], axis=0))
+            # yerr_adhd_db.append(
+            #     np.std(self.db_helper.norm_total_data[
+            #                np.where(d[cluster_idx, self.db_helper.adhd_start_idx:] > np.mean(d) + distance_std * np.std(d))[0] + self.db_helper.adhd_start_idx], axis=0))
+            # y_adhd.append(
+            #     np.mean(self.db_helper.norm_total_data[np.array(np.where(np.array(self.db_helper.adhd_label['DZ_G']) == 0)[0] + self.db_helper.adhd_start_idx)[np.where(
+            #         d[cluster_idx, np.array(np.where(np.array(self.db_helper.adhd_label['DZ_G']) == 0)[0] + self.db_helper.adhd_start_idx)] > np.mean(d) + distance_std * np.std(
+            #             d))[0]]], axis=0))
+            # yerr_adhd.append(
+            #     np.std(self.db_helper.norm_total_data[np.array(np.where(np.array(self.db_helper.adhd_label['DZ_G']) == 0)[0] + self.db_helper.adhd_start_idx)[np.where(
+            #         d[cluster_idx, np.array(np.where(np.array(self.db_helper.adhd_label['DZ_G']) == 0)[0] + self.db_helper.adhd_start_idx)] > np.mean(d) + distance_std * np.std(
+            #             d))[0]]], axis=0))
+
             x.append(cluster_idx)
             y.append(np.mean(self.db_helper.norm_total_data[np.where(cluster_array == cluster_idx)[0]], axis=0))
             yerr.append(np.std(self.db_helper.norm_total_data[np.where(cluster_array == cluster_idx)[0]], axis=0))
@@ -215,8 +303,7 @@ class AnalysisHelper(object):
             print("Max Cluster - %d : # of Total = %d, # of ADHD = %d" % (
                 cluster_idx, np.sum(np.where(cluster_array == cluster_idx, 1, 0)), np.sum(np.where(cluster_array[self.db_helper.adhd_start_idx:] == cluster_idx, 1, 0))))
 
-    def plot_bar_graph_distance(self, output_directory: str, color_list: list, cluster_array=None, distance_std: float = 0.5):
-
+    def plot_bar_graph_distance(self, output_directory: str, color_list: list, cluster_array=None, distance_std: float = 1.):
         if cluster_array is None:
             cluster_array = self.cluster_array
         if self.used_color_list is None:
@@ -234,19 +321,22 @@ class AnalysisHelper(object):
         x, y, yerr = [], [], []
         y_child, yerr_child = [], []
         y_adhd, yerr_adhd = [], []
-        y_adhd_db, yerr_adhd_db = [], []
+        y_sch_db, yerr_sch_db = [], []
+        y_mipdb_db, yerr_mipdb_db = [], []
         for cluster_idx in range(cluster_num):
             x.append(cluster_idx)
             y.append(np.mean(self.db_helper.norm_total_data[np.where(d[cluster_idx] > np.mean(d) + distance_std * np.std(d))[0]], axis=0))
             yerr.append(np.std(self.db_helper.norm_total_data[np.where(d[cluster_idx] > np.mean(d) + distance_std * np.std(d))[0]], axis=0))
             y_child.append(np.mean(self.db_helper.norm_total_data[np.where(d[cluster_idx, :self.db_helper.adhd_start_idx] > np.mean(d) + distance_std * np.std(d))[0]], axis=0))
             yerr_child.append(np.std(self.db_helper.norm_total_data[np.where(d[cluster_idx, :self.db_helper.adhd_start_idx] > np.mean(d) + distance_std * np.std(d))[0]], axis=0))
-            y_adhd_db.append(
+            y_sch_db.append(
                 np.mean(self.db_helper.norm_total_data[
-                            np.where(d[cluster_idx, self.db_helper.adhd_start_idx:] > np.mean(d) + distance_std * np.std(d))[0] + self.db_helper.adhd_start_idx], axis=0))
-            yerr_adhd_db.append(
+                            np.where(d[cluster_idx, self.db_helper.adhd_start_idx:self.db_helper.mipdb_start_idx] > np.mean(d) + distance_std * np.std(d))[
+                                0] + self.db_helper.adhd_start_idx], axis=0))
+            yerr_sch_db.append(
                 np.std(self.db_helper.norm_total_data[
-                           np.where(d[cluster_idx, self.db_helper.adhd_start_idx:] > np.mean(d) + distance_std * np.std(d))[0] + self.db_helper.adhd_start_idx], axis=0))
+                           np.where(d[cluster_idx, self.db_helper.adhd_start_idx:self.db_helper.mipdb_start_idx] > np.mean(d) + distance_std * np.std(d))[
+                               0] + self.db_helper.adhd_start_idx], axis=0))
             y_adhd.append(
                 np.mean(self.db_helper.norm_total_data[np.array(np.where(np.array(self.db_helper.adhd_label['DZ_G']) == 0)[0] + self.db_helper.adhd_start_idx)[np.where(
                     d[cluster_idx, np.array(np.where(np.array(self.db_helper.adhd_label['DZ_G']) == 0)[0] + self.db_helper.adhd_start_idx)] > np.mean(d) + distance_std * np.std(
@@ -255,13 +345,21 @@ class AnalysisHelper(object):
                 np.std(self.db_helper.norm_total_data[np.array(np.where(np.array(self.db_helper.adhd_label['DZ_G']) == 0)[0] + self.db_helper.adhd_start_idx)[np.where(
                     d[cluster_idx, np.array(np.where(np.array(self.db_helper.adhd_label['DZ_G']) == 0)[0] + self.db_helper.adhd_start_idx)] > np.mean(d) + distance_std * np.std(
                         d))[0]]], axis=0))
+            y_mipdb_db.append(
+                np.mean(self.db_helper.norm_total_data[
+                            np.where(d[cluster_idx, self.db_helper.mipdb_start_idx:] > np.mean(d) + distance_std * np.std(d))[0] + self.db_helper.mipdb_start_idx], axis=0))
+            yerr_mipdb_db.append(
+                np.std(self.db_helper.norm_total_data[
+                           np.where(d[cluster_idx, self.db_helper.mipdb_start_idx:] > np.mean(d) + distance_std * np.std(d))[0] + self.db_helper.mipdb_start_idx], axis=0))
+
         for i in range(self.db_helper.norm_total_data.shape[1]):
-            fig, ax = plt.subplots(4, 1, figsize=(12, 12))
+            fig, ax = plt.subplots(5, 1, figsize=(12, 12))
             ax[0].bar(x, np.array(y)[:, i], yerr=np.array(yerr)[:, i], color=color_list[:cluster_num])
             ax[1].bar(x, np.array(y_child)[:, i], yerr=np.array(yerr_child)[:, i], color=color_list[:cluster_num])
-            ax[2].bar(x, np.array(y_adhd_db)[:, i], yerr=np.array(yerr_adhd_db)[:, i], color=color_list[:cluster_num])
+            ax[2].bar(x, np.array(y_sch_db)[:, i], yerr=np.array(yerr_sch_db)[:, i], color=color_list[:cluster_num])
             ax[3].bar(x, np.array(y_adhd)[:, i], yerr=np.array(yerr_adhd)[:, i], color=color_list[:cluster_num])
-            for ax_i in range(4):
+            ax[4].bar(x, np.array(y_mipdb_db)[:, i], yerr=np.array(yerr_mipdb_db)[:, i], color=color_list[:cluster_num])
+            for ax_i in range(5):
                 ax[ax_i].set_ylim(-1.1, 1.1)
                 ax[ax_i].plot(np.linspace(-1, cluster_num, 100), np.zeros(100), 'k--', linewidth=0.5)
                 ax[ax_i].plot(np.linspace(-1, cluster_num, 100), np.ones(100) * 0.5, 'r--', linewidth=0.5)
@@ -271,14 +369,25 @@ class AnalysisHelper(object):
             fig.savefig('%s/result_distance/hist_feature_%s.png' % (output_directory, self.db_helper.feature_name_list[i]))
             plt.close(fig)
 
+        dist_sub_txt = open('./%s/result_distance/dist_sub.txt' % output_directory, 'w')
         for cluster_idx in range(cluster_num):
-            print("Distance Cluster - %d : # of Total = %d, # of ADHD-db = %d, # of ADHD = %d" % (
+            dist_sub_txt.write("Distance Cluster - %d : # of Total = %d, # of ADHD-db = %d, # of ADHD = %d, # of MIPDB = %d\n" % (
                 cluster_idx,
                 np.sum(np.where(d[cluster_idx] > np.mean(d) + distance_std * np.std(d), 1, 0)),
-                np.sum(np.where(d[cluster_idx, self.db_helper.adhd_start_idx:] > np.mean(d) + distance_std * np.std(d), 1, 0)),
+                np.sum(np.where(d[cluster_idx, self.db_helper.adhd_start_idx:self.db_helper.mipdb_start_idx] > np.mean(d) + distance_std * np.std(d), 1, 0)),
                 np.sum(
                     np.where(d[cluster_idx, np.where(np.array(self.db_helper.adhd_label['DZ_G']) == 0)[0] + self.db_helper.adhd_start_idx] > np.mean(d) + distance_std * np.std(d),
-                             1, 0))
+                             1, 0)),
+                np.sum(np.where(d[cluster_idx, self.db_helper.mipdb_start_idx:] > np.mean(d) + distance_std * np.std(d), 1, 0))
+            ))
+            print("Distance Cluster - %d : # of Total = %d, # of ADHD-db = %d, # of ADHD = %d, # of MIPDB = %d" % (
+                cluster_idx,
+                np.sum(np.where(d[cluster_idx] > np.mean(d) + distance_std * np.std(d), 1, 0)),
+                np.sum(np.where(d[cluster_idx, self.db_helper.adhd_start_idx:self.db_helper.mipdb_start_idx] > np.mean(d) + distance_std * np.std(d), 1, 0)),
+                np.sum(
+                    np.where(d[cluster_idx, np.where(np.array(self.db_helper.adhd_label['DZ_G']) == 0)[0] + self.db_helper.adhd_start_idx] > np.mean(d) + distance_std * np.std(d),
+                             1, 0)),
+                np.sum(np.where(d[cluster_idx, self.db_helper.mipdb_start_idx:] > np.mean(d) + distance_std * np.std(d), 1, 0))
             ))
 
     def min_fuzzy_m(self, cluster_num):
